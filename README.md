@@ -33,6 +33,7 @@ Before the formal implementation, there are several points to note:
 *  For pyqt versions, select image_show_pyqt4.py or image_show_pyqt5.py
 
 Now let's officially run the test:
+
 First, Train boss image.
 
 ```
