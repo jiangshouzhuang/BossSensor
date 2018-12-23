@@ -29,8 +29,9 @@ Put images into [data/boss](https://github.com/Hironsan/BossSensor/tree/master/d
 ## Usage
 Before the formal implementation, there are several points to note:
 * Modify the batch_size size of the train in boss_train.py according to the data size of the picture below
-*  Modify the value of cascade_path, the parameter of camera_reader.py, according to the actual Python environment variable
-*  For pyqt versions, select image_show_pyqt4.py or image_show_pyqt5.py
+* Modify the value of cascade_path, the parameter of camera_reader.py, according to the actual Python environment variable
+* For pyqt versions, select image_show_pyqt4.py or image_show_pyqt5.py
+* Create a **store** directory to store model data 
 
 Now let's officially run the test:
 
@@ -48,11 +49,12 @@ $ python camera_reader.py
 ```
 
 ## Install
-Install OpenCV, PyQt4, Anaconda.
+Install OpenCV, PyQt5, Anaconda.
 
 ```
-conda create -n venv python=3.5
-source activate venv
+conda install --channel https://conda.anaconda.org/conda-forge pyqt
+conda create -n python35 python=3.5
+source activate python35
 conda install -c https://conda.anaconda.org/menpo opencv3
 conda install -c conda-forge tensorflow
 pip install -r requirements.txt
