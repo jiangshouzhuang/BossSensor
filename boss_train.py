@@ -3,7 +3,8 @@ from __future__ import print_function
 import random
 
 import numpy as np
-from sklearn.cross_validation import train_test_split
+# sklearn.cross_validation是sklearn老版本的模块，新版本都迁移到了sklearn.model_selection
+#from sklearn.cross_validation import train_test_split
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
@@ -12,6 +13,7 @@ from keras.optimizers import SGD
 from keras.utils import np_utils
 from keras.models import load_model
 from keras import backend as K
+from sklearn.model_selection import train_test_split
 
 from boss_input import extract_data, resize_with_pad, IMAGE_SIZE
 
@@ -102,7 +104,10 @@ class Model(object):
 
         self.model.summary()
 
-    def train(self, dataset, batch_size=32, nb_epoch=40, data_augmentation=True):
+    # batch_size=32 修改为 batch_size=2
+    # 将batch_size设置为较小的数字。当您的batch_size设置为比样本集大小更大的值时，会出现此错误。
+    # AttributeError: 'ProgbarLogger' object has no attribute 'log_values'
+    def train(self, dataset, batch_size=2, nb_epoch=40, data_augmentation=True):
         # let's train the model using SGD + momentum (how original).
         sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
         self.model.compile(loss='categorical_crossentropy',
