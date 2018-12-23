@@ -21,6 +21,8 @@ If the image is classified as the Boss, it will monitor changes.
 * OSX
 * Anaconda
 * Lots of images of your boss and other person image
+* For Mac's user, install PyQt5:
+conda install --channel https://conda.anaconda.org/conda-forge pyqt
 
 Put images into [data/boss](https://github.com/Hironsan/BossSensor/tree/master/data/boss) and [data/other](https://github.com/Hironsan/BossSensor/tree/master/data/other).
 
