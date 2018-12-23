@@ -27,6 +27,12 @@ conda install --channel https://conda.anaconda.org/conda-forge pyqt
 Put images into [data/boss](https://github.com/Hironsan/BossSensor/tree/master/data/boss) and [data/other](https://github.com/Hironsan/BossSensor/tree/master/data/other).
 
 ## Usage
+Before the formal implementation, there are several points to note:
+* Modify the batch_size size of the train in boss_train.py according to the data size of the picture below
+*  Modify the value of cascade_path, the parameter of camera_reader.py, according to the actual Python environment variable
+*  For pyqt versions, select image_show_pyqt4.py or image_show_pyqt5.py
+
+Now let's officially run the test:
 First, Train boss image.
 
 ```
